@@ -12,24 +12,15 @@ library(scales)
 source("./est_module.R")
 
 rep = 5
-st_list = c("Kerala")
-load("../India/Kerala/KeralaData.Rda")
-#load("../USA_data_processing/covid_df.Rda")
-# 
+st_list = c("Kerala") 
+load("../data_preprocessing/KeralaData.Rda")
 load("./Kerala_est_boot_data_1120.Rda")
-load("./Utah_est_bs_1120.Rda")
-load("../Results\ for\ USA\ States/Kerala/Kerala_est_st.Rda")
+load("./Kerala_est_bs_1120.Rda")
+load("../Results/Kerala/Kerala_est_st.Rda")
 
 
 for(st in st_list){ 
-  #load(sprintf("../Results for USA States/%s/%s_est_bs_1120.Rda", st, st))
-  #load(sprintf("../Results for USA States/%s/%s_est_boot_data_1120.Rda", st, st))
-  #load(sprintf("../Results for USA States/%s/%s_est_st.Rda", st, st))
-  
-  # load(sprintf("../nonparametric_est_data_analysis_Dec15/Utah/Utah_est_bs_1120.Rda"))
-  # load(sprintf("../nonparametric_est_data_analysis_Dec15/Utah/Utah_est_boot_data_1120.Rda"))
-  # load(sprintf("../nonparametric_est_data_analysis_Dec15/Utah/Utah_est_st.Rda"))
-  # 
+
   data.st = data_st(st)
   
   n.t = est_st$est_para$est$n.t
@@ -45,7 +36,7 @@ for(st in st_list){
   level  = .05
   ## collect gamma
   
-  File <- sprintf("../Results for USA States/%s/CI_%s/gamma_ci.eps", st, st)              
+  File <- sprintf("../Results/%s/CI_%s/gamma_ci.eps", st, st)              
   
   #if (file.exists(File)) stop(File, " already exists")
   dir.create(dirname(File), showWarnings = FALSE)
@@ -63,7 +54,7 @@ for(st in st_list){
     geom_vline(aes(xintercept = gamma.true),col='blue',size=1)+
     geom_vline(aes(xintercept = gamma.mean),col='red',size=.6)
   p1
-  ggsave(sprintf("../Results for USA States/%s/CI_%s/gamma_ci.eps", st, st))
+  ggsave(sprintf("../Results/%s/CI_%s/gamma_ci.eps", st, st))
   
   
   ## collect rhoA
@@ -80,7 +71,7 @@ for(st in st_list){
     geom_vline(aes(xintercept = rhoA.true),col='blue',size=1)+
     geom_vline(aes(xintercept = rhoA.mean),col='red',size=.4)
   p2
-  ggsave(sprintf("../Results for USA States/%s/CI_%s/rhoA_ci.eps", st, st))
+  ggsave(sprintf("../Results/%s/CI_%s/rhoA_ci.eps", st, st))
   
   ####pointwise ci for alpha.t
   
@@ -142,7 +133,7 @@ for(st in st_list){
     geom_vline(aes(xintercept = alpha.true),col='blue',size=1)+
     geom_vline(aes(xintercept = alpha.mean),col='firebrick2',size=1)
   p3
-  ggsave(sprintf("../Results for USA States/%s/CI_%s/alpha_mean_ci.eps", st, st))
+  ggsave(sprintf("../Results/%s/CI_%s/alpha_mean_ci.eps", st, st))
   # 
   
   
@@ -179,7 +170,7 @@ for(st in st_list){
           axis.title=element_text(size=26))
   
   p4
-  ggsave(sprintf("../Results for USA States/%s/CI_%s/rhoH_ci.eps", st, st))
+  ggsave(sprintf("../Results/%s/CI_%s/rhoH_ci.eps", st, st))
   
   
   
@@ -211,7 +202,7 @@ for(st in st_list){
           axis.title=element_text(size=26))
   
   p5
-  ggsave(sprintf("../Results for USA States/%s/CI_%s/theta_ci.eps", st, st))
+  ggsave(sprintf("../Results/%s/CI_%s/theta_ci.eps", st, st))
   
   
   ## point-wise CI for del.t.lowess
@@ -239,12 +230,12 @@ for(st in st_list){
           axis.title=element_text(size=26 ))
   
   p6 
-  ggsave(sprintf("../Results for USA States/%s/CI_%s/del_lowess_ci.eps", st, st))
+  ggsave(sprintf("../Results/%s/CI_%s/del_lowess_ci.eps", st, st))
   
   
  
   
-  sink(sprintf("../Results for USA States/%s/CI_%s/CIs.txt", st, st))
+  sink(sprintf("../Results/%s/CI_%s/CIs.txt", st, st))
   
   print(paste("ci for gamma = ",sort(est.bs$gamma.bs)[round(c((Nsim+1)*level/2, (Nsim+1)*(1-level/2)))]))
   print(paste("mean of gamma.hat=", mean(est.bs$gamma.bs)))

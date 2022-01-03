@@ -14,9 +14,7 @@ library(scales)
 
 source("./fitting_functions.R")
 source("./est_plot_func.R")
-#load("../USA_data_processing/covid_df.Rda")
-#load("../India/Kerala/KeralaData.Rda")
-load("./KeralaData.Rda")
+load("../data_preprocessing/KeralaData.Rda")
 bw_lowess = 1/16
 ##data_st is the function to read the data for a particular state "st" and return the smoothed trajectories of (C,D,H,Q,R,DelC,DelH,DelR,DelQ,DelD,Test,Kappa) as a list
 data_st = function(st){
@@ -167,7 +165,7 @@ estimation_module = function(dat, numBlock, wd.length, boot = FALSE){
       gamma.grid = gamma.grid, eval.gamma = eval.gamma))
     
     ##ggplot of profile loss as a func of gamma 
-    File <- sprintf("../Results for USA States/%s/%s_plot_gamma.eps", dat$st, dat$st)              
+    File <- sprintf("../Results/%s/%s_plot_gamma.eps", dat$st, dat$st)              
     #if (file.exists(File)) stop(File, " already exists")
     dir.create(dirname(File), showWarnings = FALSE)
     
@@ -181,7 +179,7 @@ estimation_module = function(dat, numBlock, wd.length, boot = FALSE){
             legend.direction = "horizontal",
             legend.background = element_rect(fill = "transparent"), 
             legend.text=element_text(size=14))
-    #ggsave(sprintf("../Results for USA States/%s/%s_plot_gamma.eps",  dat$st,  dat$st))
+    #ggsave(sprintf("../Results/%s/%s_plot_gamma.eps",  dat$st,  dat$st))
     
     
     ##ggplot of profile loss as a func of rhoA
@@ -197,7 +195,7 @@ estimation_module = function(dat, numBlock, wd.length, boot = FALSE){
             legend.background = element_rect(fill = "transparent"), 
             legend.text=element_text(size=14))
     
-    #ggsave(sprintf("../Results for USA States/%s/%s_plot_rhoA.eps",  dat$st,  dat$st))
+    #ggsave(sprintf("../Results/%s/%s_plot_rhoA.eps",  dat$st,  dat$st))
     
   }
   
@@ -247,10 +245,10 @@ plot_for_estimation = function(st, numBlock, wd.length){
   # a_kerala = data.st
   # View(a_kerala)
   est_st = estimation_module(dat = data.st, numBlock = numBlock , wd.length = wd.length, boot = FALSE)
-  #load(sprintf("../Results for USA States/%s/%s_est_st.Rda", st, st))
+  #load(sprintf("../Results/%s/%s_est_st.Rda", st, st))
   
-  sink(sprintf("../Results for USA States/%s/%s_est_st.Rda", st, st))
-  save(est_st, file = sprintf("../Results for USA States/%s/%s_est_st.Rda", st, st))
+  sink(sprintf("../Results/%s/%s_est_st.Rda", st, st))
+  save(est_st, file = sprintf("../Results/%s/%s_est_st.Rda", st, st))
   sink()
   plot_est(var = data.st$var, raw_data = data.st$raw_data, est_st = est_st, dates = data.st$dates)
 

@@ -13,8 +13,7 @@ library(lemon)
 source("./fitting_functions.R")
 source("./est_plot_func.R")
 source("./est_module.R")
-#load("../USA_data_processing/covid_df.Rda")
-load("../India/Kerala/KeralaData.Rda")
+load("../data_preprocessing/KeralaData.Rda")
 bw_lowess = 1/16
 
 st="Kerala"

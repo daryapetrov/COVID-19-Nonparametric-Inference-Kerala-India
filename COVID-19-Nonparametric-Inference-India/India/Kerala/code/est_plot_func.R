@@ -132,7 +132,7 @@ plot_est = function(var,  raw_data , est_st, dates){
   
   
   ##Save the estimates of the parameters
-  sink(sprintf("../Results for USA States/%s/%s_opt_gamma_rhoA.txt", st, st))
+  sink(sprintf("../Results/%s/%s_opt_gamma_rhoA.txt", st, st))
   print(paste("gamma.hat = ", est1$gamma.hat, "rhoA.hat = ", est1$rhoA.hat))
   print(paste("gamma.hat/(gamma.hat+rhoA.hat)=", est1$gamma.hat/(est1$gamma.hat + est1$rhoA.hat)))
   print(paste("rhoH.hat = ", round(est1$rhoH.hat.vec,4)))
@@ -243,7 +243,7 @@ plot_est = function(var,  raw_data , est_st, dates){
   
   #validation_H
   
-  ggsave(file = sprintf("../Results for USA States/%s/%s_validaton_H.eps", st, st))
+  ggsave(file = sprintf("../Results/%s/%s_validaton_H.eps", st, st))
   
   
   ###RCCF
@@ -270,7 +270,7 @@ plot_est = function(var,  raw_data , est_st, dates){
           legend.text=element_text(size=24))
   
   #RCCF
-  ggsave(file =sprintf("../Results for USA States/%s/%s_RCCF.eps", st, st))
+  ggsave(file =sprintf("../Results/%s/%s_RCCF.eps", st, st))
   
   
   ###CIR NIR
@@ -300,7 +300,7 @@ plot_est = function(var,  raw_data , est_st, dates){
           legend.background = element_rect(fill = "transparent"), 
           legend.text=element_text(size=24))
   #CIR_NIR
-  ggsave(file =sprintf("../Results for USA States/%s/%s_NIR_CIR.eps", st, st))
+  ggsave(file =sprintf("../Results/%s/%s_NIR_CIR.eps", st, st))
   
   
   
@@ -333,7 +333,7 @@ plot_est = function(var,  raw_data , est_st, dates){
           legend.background = element_rect(fill = "transparent"), 
           legend.text=element_text(size=24))
   #CFR_plot
-  ggsave(file =sprintf("../Results for USA States/%s/%s_CFR.eps", st, st))
+  ggsave(file =sprintf("../Results/%s/%s_CFR.eps", st, st))
   
   
   ##Plot for R0 analogue
@@ -359,7 +359,7 @@ plot_est = function(var,  raw_data , est_st, dates){
           legend.text = element_text(size = 24))
   
   #R0_plot
-  ggsave(file = sprintf("../Results for USA States/%s/%s_R0_analogue.eps", st, st))
+  ggsave(file = sprintf("../Results/%s/%s_R0_analogue.eps", st, st))
   
   
   ###A_hat
@@ -382,7 +382,7 @@ plot_est = function(var,  raw_data , est_st, dates){
           legend.text=element_text(size=24))
   
   #Ahat_plot
-  ggsave(file =sprintf("../Results for USA States/%s/%s_Ahat.eps", st, st))
+  ggsave(file =sprintf("../Results/%s/%s_Ahat.eps", st, st))
   
   
   ###New Infections
@@ -415,7 +415,7 @@ plot_est = function(var,  raw_data , est_st, dates){
           legend.text=element_text(size=24))
   
   #New_Infect
-  ggsave(file =sprintf("../Results for USA States/%s/%s_NewInfect.eps", st, st))
+  ggsave(file =sprintf("../Results/%s/%s_NewInfect.eps", st, st))
   
   ##Doubling Rate
   
@@ -442,7 +442,7 @@ plot_est = function(var,  raw_data , est_st, dates){
           legend.background = element_rect(fill = "transparent"), 
           legend.text=element_text(size=24))
   #doub_rt_plot
-  ggsave(file =sprintf("../Results for USA States/%s/%s_Doubling_Rate.eps", st, st))
+  ggsave(file =sprintf("../Results/%s/%s_Doubling_Rate.eps", st, st))
   
   TtoH_plot = ggplot(df_CRHD, aes(dates1)) + 
     geom_pointline(aes(y = TtoH , x = dates1) , size=.8 ) +
@@ -459,7 +459,7 @@ plot_est = function(var,  raw_data , est_st, dates){
           legend.background = element_rect(fill = "transparent"), 
           legend.text=element_text(size=24))
   #TtoH_plot
-  ggsave(file =sprintf("../Results for USA States/%s/%s_TtoH_plot.eps", st, st))
+  ggsave(file =sprintf("../Results/%s/%s_TtoH_plot.eps", st, st))
   
 }
 

@@ -4,7 +4,7 @@
 rm(list=ls())
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 #setwd("/Users/dpetrov/COVID-19-opt-Nonparametric-Inference-India/Results\ for\ USA\ States")
-#setwd()
+
 library(magrittr)
 library(ggplot2)
 library(reshape2)
@@ -17,10 +17,9 @@ source("./fitting_functions.R")
 source("./est_plot_func.R")
 source("./est_module.R")
 
-#load("../USA_data_processing/covid_df.Rda")
-#load("./Utah/Utah_est_st.Rda")
-load("../India/Kerala/KeralaData.Rda")
-load("../Results\ for\ USA\ States/Kerala/Kerala_est_st.Rda")
+
+load("../data_preprocessing/KeralaData.Rda")
+load("../Results/Kerala/Kerala_est_st.Rda")
 
 resi_bootstrap = function(observed, estimated, Time){
   
