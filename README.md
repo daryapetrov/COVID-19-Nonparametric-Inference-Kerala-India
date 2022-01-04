@@ -23,7 +23,7 @@ We use the model described [here](https://www.medrxiv.org/content/10.1101/2021.0
 
 # Results
 
-The estimation results and relevant plots are stored in the folder ``` Results ```. Relevant estimation plots are stored in the sub-folder named ``` India/Kerala ```. The relevant plots for the bootstrap confidence intervals are stored in the folder ``` Results ```  -> ``` India ``` -> ``` Kerala ``` -> ``` CI_Kerala ```.
+The estimation results and relevant plots are stored in the folder ``` Results ```. Relevant estimation plots are stored in the sub-folder named ``` Kerala ```. The relevant plots for the bootstrap confidence intervals are stored in the folder ``` Results ```  -> ``` India ``` -> ``` Kerala ``` -> ``` CI_Kerala ```.
 
 
 
