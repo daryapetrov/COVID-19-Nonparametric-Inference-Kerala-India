@@ -2,7 +2,7 @@
 
 We use the model described [here](https://www.medrxiv.org/content/10.1101/2021.02.01.21250936v1) on analyzing the dynamics of COVID-19 in Kerala, India.
 
-# Description of the files
+## Description of the files
 
 (A) The folder "data_preprocessing" contains the data processing steps:
 1. The number of daily confirmed cases, recoveries, tests, and deaths from COVID-19 are obtained from https://data.covid19india.org. This is saved as ``` states.csv ```. 
@@ -13,7 +13,7 @@ We use the model described [here](https://www.medrxiv.org/content/10.1101/2021.0
 
 (B) The folder "code" contains the estimation procedure (described [here](https://github.com/Satarupa3671/COVID-19-Nonparametric-Inference)). 
 
-# How to run the code:
+## How to run the code:
 
 All code resides in the folder ``` COVID-19-Nonparametric-Inference-India/India/Kerala/ ```. 
 
@@ -23,7 +23,7 @@ All code resides in the folder ``` COVID-19-Nonparametric-Inference-India/India/
 * Step 4: For performing the residual bootstrap, use ``` resi_boot.R ``` (in the folder "code"). This requires the estimation outputs from Step 3. Bootstrap estimate outputs are stored in the RData files ``` Kerala_est_bs.Rda ``` and ``` Kerala_est_boot_data.Rda ```.
 * Step 5: For generating the confidence interval and histogram plots, use ``` ggplot_ci.R ``` (in the folder "code"). This requires the output files from Step 3 and Step 4.
 
-# Results
+## Results
 
 The estimation results and relevant plots are stored in the folder ``` Results ```. Relevant estimation plots are stored in the sub-folder named ``` Kerala ```. The relevant plots for the bootstrap confidence intervals are stored in the folder ``` Results ```  -> ``` India ``` -> ``` Kerala ``` -> ``` CI_Kerala ```.
 
