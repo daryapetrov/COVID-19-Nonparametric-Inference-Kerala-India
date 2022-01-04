@@ -25,7 +25,7 @@ All code resides in the folder ``` COVID-19-Nonparametric-Inference-India/India/
 
 ## Results
 
-The estimation results and relevant plots are stored in the folder ``` Results ```. Relevant estimation plots are stored in the sub-folder named ``` Kerala ```. The relevant plots for the bootstrap confidence intervals are stored in the folder ``` Results ```  -> ``` India ``` -> ``` Kerala ``` -> ``` CI_Kerala ```.
+The estimation results and relevant plots are stored in the folder ``` Results ```. Relevant estimation plots are stored in the sub-folder named ``` Kerala ```. The relevant plots for the bootstrap confidence intervals are stored in the folder ``` Results ``` ->  ``` Kerala ``` -> ``` CI_Kerala ```.
 
 
 
