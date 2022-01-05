@@ -1,4 +1,4 @@
-# COVID-19-Nonparametric-Inference in Kerala, India
+# COVID-19 Nonparametric Inference in Kerala, India
 
 We use the model described [here](https://www.medrxiv.org/content/10.1101/2021.02.01.21250936v1) on analyzing the dynamics of COVID-19 in Kerala, India.
 
